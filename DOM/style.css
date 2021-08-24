@@ -1,0 +1,11 @@
+input {
+  background-color: beige;
+  transform: rotate(-5deg);
+  margin: 7px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+label {
+  transform: rotate(7deg);
+}
