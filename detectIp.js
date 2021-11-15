@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 
-const { networkInterfaces } = require('os');
+import { networkInterfaces } from 'os';
 
 const nets = networkInterfaces();
 const results = Object.create(null); // Or just '{}', an empty object
