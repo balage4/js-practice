@@ -1,8 +1,9 @@
+/* eslint-disable  */
 import dotenv from 'dotenv';
-import { GoogleSpreadsheet } from 'google-spreadsheet'
-import createRowDataObject from './createRowDataObject.js';
-import { createUniqueId } from './createUniqueID.js';
-import getRawRowById from './getRawRowById.js';
+import { GoogleSpreadsheet } from 'google-spreadsheet';
+import createRowDataObject from './createRowDataObject';
+import { createUniqueId } from './createUniqueID';
+import getRawRowById from './getRawRowById';
 
 dotenv.config();
 
