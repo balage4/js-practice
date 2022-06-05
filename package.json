@@ -22,5 +22,14 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "google-spreadsheet": "^3.3.0",
+    "googleapis": "^100.0.0",
+    "jspdf": "^2.5.1",
+    "puppeteer": "^13.4.0",
+    "randomstring": "^1.2.2"
+  }
 }
