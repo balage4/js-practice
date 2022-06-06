@@ -31,5 +31,8 @@
     "jspdf": "^2.5.1",
     "puppeteer": "^13.4.0",
     "randomstring": "^1.2.2"
+  },
+  "scripts": {
+    "gsindex": "node googlespreadsheets/index.js"
   }
 }

@@ -1,17 +1,13 @@
 /* eslint-disable  */
-import dotenv from 'dotenv';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
-import createRowDataObject from './createRowDataObject';
-import { createUniqueId } from './createUniqueID';
-import getRawRowById from './getRawRowById';
+import createRowDataObject from './createRowDataObject.js';
+import { createUniqueId } from './createUniqueID.js';
+import getRawRowById from './getRawRowById.js';
+import { SSID, CLIENT_EMAIL, PRIVATE_KEY } from './environment.js';
 
-dotenv.config();
-
-const { SSID, CLIENT_EMAIL, PRIVATE_KEY } = process.env;
-
-const authSpreadsheet = new GoogleSpreadsheet(SSID);
 
 const callSpreadsheet = async (sheetName, ssCallback, options) => {
+  const authSpreadsheet = new GoogleSpreadsheet(SSID);
   await authSpreadsheet.useServiceAccountAuth({
     client_email: CLIENT_EMAIL,
     private_key: PRIVATE_KEY
@@ -55,3 +51,5 @@ const deleteRow = async (sheet, options) => {
 const addHeaderValue = () => (sheet, options) => {
 
 }
+
+callSpreadsheet('practice', getRowById, { searchId: 'dq2205ze0422ucr2417jxs' }).then(res => console.log(res));

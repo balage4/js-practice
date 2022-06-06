@@ -1,5 +1,4 @@
 node_modules
 .DS_Store
 CRM/main.js
-.env
-
+environment.js
