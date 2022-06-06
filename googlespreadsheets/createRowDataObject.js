@@ -1,3 +1,5 @@
+/* eslint-disable  */
+
 const createRowDataObject = (rawData) => {
   const headers = Object.keys(rawData).filter(header => !header.includes('_'));
   const out = {};
@@ -9,9 +11,28 @@ const createRowDataObject = (rawData) => {
 
 export default createRowDataObject;
 
-const arrangeValue = (value) => {
-  if (value === 'TRUE') return true;
-  else if (value === 'FALSE') return false;
-  else if (!isNaN(value)) return parseInt(value);
-  else return value;
+const isTrue = (value) => {
+  return value === 'TRUE';
 }
+const isFalse = (value) => {
+  return value === 'FALSE';
+}
+const isNumber = (value) => {
+  return !isNaN(value) ? parseInt(value) : false;
+}
+
+const validations = {
+  isTrue,
+  isFalse,
+  isNumber,
+}
+
+const arrangeValue = (value) => {
+  let out = value;
+  Object.keys(validations).forEach(validation => {
+    const validated = validations[validation](value);
+    if (validated) out = validated;
+  })
+  return out;
+}
+
