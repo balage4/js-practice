@@ -2,7 +2,7 @@ const toFix = (num) => {
   return num < 10 ? `0${num}` : `${num}`;
 }
 
-const generateUniqueLetters = letterNumber => {
+const genLetter = letterNumber => {
   let out = '';
   const letters = 'abcdefghijklmnopqrstuvwxyz';
   const lettersLength = letters.length;
@@ -15,7 +15,7 @@ const generateUniqueLetters = letterNumber => {
 export const createUniqueId = () => {
   const d = new Date();
   const year = d.getFullYear().toString().split('');
-  let str = `${generateUniqueLetters(2)}${year[2]}${year[3]}${toFix(d.getMonth())}${generateUniqueLetters(2)}${toFix(d.getDate())}${toFix(d.getHours())}${generateUniqueLetters(3)}${toFix(d.getMinutes())}${toFix(d.getSeconds())}`;
-  str += generateUniqueLetters(3);
+  let str = `${genLetter(2)}${year[2]}${year[3]}${toFix(d.getMonth())}${genLetter(2)}${toFix(d.getDate())}${toFix(d.getHours())}${genLetter(3)}${toFix(d.getMinutes())}${toFix(d.getSeconds())}`;
+  str += genLetter(3);
   return str;
 }
