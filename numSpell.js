@@ -53,7 +53,7 @@ function numSpell(number) {
   let out = '';
   const spells = getSpells();
   let numString = number.toString();
-  if (numString.length > 9) return 'Too big number';
+  if (numString.length > 9) return 'Túl nagy szám!';
 
   let i = 1;
   let before = 0;
